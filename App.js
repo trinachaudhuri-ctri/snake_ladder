@@ -6,7 +6,7 @@ import Food from './components/Food';
 import Tail from './components/Tail';
 import GameLoop from './systems/GameLoop';
 
-
+import { GameEngine } from 'react-native-game-engine';
 
 
 export default function App() {
@@ -98,27 +98,35 @@ export default function App() {
             <View style={styles.controlContainer}>
         <View style={styles.controllerRow}>
           <TouchableOpacity onPress={() => engine.current.dispatch("move-up")}>
-            <View style={styles.controlBtn} />
+          <View style={styles.controlBtn} >
+              <Text>Move Up</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.controllerRow}>
           <TouchableOpacity
             onPress={() => engine.current.dispatch("move-left")}
           >
-            <View style={styles.controlBtn} />
+            <View style={styles.controlBtn} >
+              <Text>Move Left</Text>
+            </View>
           </TouchableOpacity>
           <View style={[styles.controlBtn, { backgroundColor: null }]} />
           <TouchableOpacity
             onPress={() => engine.current.dispatch("move-right")}
           >
-            <View style={styles.controlBtn} />
+           <View style={styles.controlBtn} >
+              <Text>Move Right</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.controllerRow}>
           <TouchableOpacity
             onPress={() => engine.current.dispatch("move-down")}
           >
-            <View style={styles.controlBtn} />
+             <View style={styles.controlBtn} >
+              <Text>Move Down</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -159,7 +167,9 @@ const styles = StyleSheet.create({
   },
   controlBtn: {
     backgroundColor: "yellow",
-    width: 100,
-    height: 100,
+    width: 50,
+    justifyContent:'center',
+    alignItems:'center',
+    height: 50,
   },
 });
